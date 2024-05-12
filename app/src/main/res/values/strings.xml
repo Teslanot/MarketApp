@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MarketApp</string>
+    <string name="welcome">Hello!\nany day is good\nfor shopping</string>
+    <string name="quality">Easy access,\nhigh-quality\nproducts\nA simple purchase</string>
+</resources>

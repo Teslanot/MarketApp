@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "101015051879",
+    "project_id": "marketplace-app-e0222",
+    "storage_bucket": "marketplace-app-e0222.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101015051879:android:058ba464c7cfa3f3d37ec2",
+        "android_client_info": {
+          "package_name": "com.dan.marketapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqYLU96pzOPkBKE8dBECJwflsHxlddudo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
