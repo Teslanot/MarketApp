@@ -48,6 +48,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -76,9 +77,9 @@ dependencies {
     implementation("com.shuhart.stepview:stepview:1.5.1")
 
     //Android Ktx
-    implementation("androidx.navigation:navigation-fragment-ktx:2.4.2")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
 
-    implementation("com.google.dagger:hilt-android:2.44")
+    implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
 
 }
