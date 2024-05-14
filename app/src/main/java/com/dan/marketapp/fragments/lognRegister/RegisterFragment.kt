@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 private val TAG = "RegisterFragment"
 @AndroidEntryPoint
-class RegisterFragment:Fragment() {
+class RegisterFragment:Fragment(R.layout.fragment_register) {
 
     private lateinit var binding: FragmentRegisterBinding
     private val viewModel by viewModels<RegisterViewModel>()
