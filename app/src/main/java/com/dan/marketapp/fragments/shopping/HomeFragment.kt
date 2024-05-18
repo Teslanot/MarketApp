@@ -10,6 +10,7 @@ import com.dan.marketapp.adapters.HomeViewAdapter
 import com.dan.marketapp.databinding.FragmentHomeBinding
 import com.dan.marketapp.fragments.categories.AccessoryFragment
 import com.dan.marketapp.fragments.categories.ChairFragment
+import com.dan.marketapp.fragments.categories.CupboardFragment
 import com.dan.marketapp.fragments.categories.FurnitureFragment
 import com.dan.marketapp.fragments.categories.MainCategory
 import com.dan.marketapp.fragments.categories.TableFragment
@@ -30,13 +31,16 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val categoriesFragments = arrayListOf<Fragment>(
+        val categoriesFragments = arrayListOf(
             MainCategory(),
             ChairFragment(),
+            CupboardFragment(),
             TableFragment(),
             AccessoryFragment(),
             FurnitureFragment()
         )
+
+        binding.viewpagerHome.isUserInputEnabled = false
 
         val viewPager2Adapter =
             HomeViewAdapter(categoriesFragments, childFragmentManager, lifecycle)
