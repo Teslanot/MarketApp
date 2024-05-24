@@ -29,7 +29,7 @@ class BillingViewModel @Inject constructor(
         viewModelScope.launch {
             _address.emit(Resource.Loading())
         }
-        firestore.collection("user").document(auth.uid!!).collection("addresses")
+        firestore.collection("user").document(auth.uid!!).collection("address")
             .addSnapshotListener { value, error ->
                 if (error != null){
                     viewModelScope.launch {
