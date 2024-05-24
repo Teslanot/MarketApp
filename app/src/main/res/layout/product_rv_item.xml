@@ -38,7 +38,7 @@
                 android:fontFamily="@font/carter_one"
                 android:text="Chair"
                 android:textColor="@color/black"
-                android:textSize="17sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_weight="1"/>
 
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="15dp"
-            android:fontFamily="@font/carter_one"
+            android:fontFamily="@font/contrail_one"
             android:text="$1600"
             android:textColor="@color/black"
             android:textSize="15sp"
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="15dp"
-            android:fontFamily="@font/carter_one"
+            android:fontFamily="@font/contrail_one"
             android:text="$1600"
             android:textColor="@color/black"
             android:textSize="15sp"

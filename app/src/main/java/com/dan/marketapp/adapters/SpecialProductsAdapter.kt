@@ -15,9 +15,9 @@ class SpecialProductsAdapter: RecyclerView.Adapter<SpecialProductsAdapter.Specia
 
         fun bind(product: Product){
             binding.apply {
-                Glide.with(itemView).load(product.images[0]).into(imageSpecialRvItem)
-                tvSpecialProductName.text = product.name
-                tvSpecialProductPrice.text = product.price.toString()
+                Glide.with(itemView).load(product.images[0]).into(imgAd)
+                tvAdName.text = product.name
+                tvAdPrice.text = product.price.toString()
             }
         }
     }
