@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -14,16 +17,25 @@ import com.dan.marketapp.activities.ShoppingActivity
 import com.dan.marketapp.adapters.ColorsAdapter
 import com.dan.marketapp.adapters.SizeAdapter
 import com.dan.marketapp.adapters.ViewPager2Images
+import com.dan.marketapp.data.CartProduct
 import com.dan.marketapp.databinding.FragmentProductDetailsBinding
 import com.dan.marketapp.di.hideBottomNavigation
+import com.dan.marketapp.util.Resource
+import com.dan.marketapp.viewmodel.DetailsViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 
+@AndroidEntryPoint
 class ProductDetailsFragment:Fragment() {
     private val args by navArgs<ProductDetailsFragmentArgs>()
     private lateinit var binding:FragmentProductDetailsBinding
     private val viewPagerAdapter by lazy { ViewPager2Images() }
     private val sizeAdapter by lazy { SizeAdapter() }
     private val colorAdapter by lazy { ColorsAdapter() }
+    private var selectedColor: Int? = null
+    private var selectedSize: String? = null
+    private val viewModel by viewModels<DetailsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,13 +60,45 @@ class ProductDetailsFragment:Fragment() {
             findNavController().navigateUp()
         }
 
+        sizeAdapter.onItemClick = {
+            selectedSize = it
+
+        }
+
+        colorAdapter.onItemClick = {
+            selectedColor = it
+        }
+
+        binding.buttonAddToCart.setOnClickListener {
+            viewModel.addUpdateProductCart(CartProduct(product, 1,selectedColor, selectedSize))
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.addToCart.collectLatest{
+                when(it){
+                    is Resource.Loading -> {
+                        binding.buttonAddToCart.startAnimation()
+                    }
+                    is Resource.Success -> {
+                        binding.buttonAddToCart.revertAnimation()
+                        Toast.makeText(requireContext(), "Product added to cart", Toast.LENGTH_SHORT).show()
+                    }
+                    is Resource.Error -> {
+                        binding.buttonAddToCart.revertAnimation()
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                    }
+                    else -> Unit
+                }
+            }
+        }
+
         binding.apply {
             tvProductName.text = product.name
-            tvPrice.text = "$ ${product.price}"
-            tvDescription.text = product.description
+            tvProductPrice.text = "$ ${product.price}"
+            tvProductDescription.text = product.description
 
             if(product.colors.isNullOrEmpty())
-                tvProductColor.visibility = View.INVISIBLE
+                tvProductColors.visibility = View.INVISIBLE
             if(product.sizes.isNullOrEmpty())
                 tvProductSize.visibility = View.INVISIBLE
 
