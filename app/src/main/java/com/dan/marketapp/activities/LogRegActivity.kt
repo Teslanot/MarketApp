@@ -20,4 +20,5 @@ class LogRegActivity : AppCompatActivity() {
             insets
         }
     }
+
 }

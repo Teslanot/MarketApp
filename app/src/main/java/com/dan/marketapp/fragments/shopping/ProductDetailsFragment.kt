@@ -1,5 +1,6 @@
 package com.dan.marketapp.fragments.shopping
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,12 +9,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dan.marketapp.R
-import com.dan.marketapp.activities.ShoppingActivity
 import com.dan.marketapp.adapters.ColorsAdapter
 import com.dan.marketapp.adapters.SizeAdapter
 import com.dan.marketapp.adapters.ViewPager2Images
@@ -22,7 +20,6 @@ import com.dan.marketapp.databinding.FragmentProductDetailsBinding
 import com.dan.marketapp.di.hideBottomNavigation
 import com.dan.marketapp.util.Resource
 import com.dan.marketapp.viewmodel.DetailsViewModel
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
@@ -47,6 +44,7 @@ class ProductDetailsFragment:Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
