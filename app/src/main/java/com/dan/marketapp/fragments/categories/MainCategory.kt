@@ -10,7 +10,6 @@ import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,7 +18,7 @@ import com.dan.marketapp.adapters.BestDealsAdapter
 import com.dan.marketapp.adapters.BestProductAdapter
 import com.dan.marketapp.adapters.SpecialProductsAdapter
 import com.dan.marketapp.databinding.FragmentMainCategoryBinding
-import com.dan.marketapp.di.showBottomNavigation
+import com.dan.marketapp.util.showBottomNavigation
 import com.dan.marketapp.util.Resource
 import com.dan.marketapp.viewmodel.MainCategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint

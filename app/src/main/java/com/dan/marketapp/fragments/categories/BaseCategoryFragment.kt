@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dan.marketapp.R
 import com.dan.marketapp.adapters.BestProductAdapter
 import com.dan.marketapp.databinding.FragmentBaseCategoryBinding
-import com.dan.marketapp.di.showBottomNavigation
+import com.dan.marketapp.util.showBottomNavigation
 
 open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
     private lateinit var binding: FragmentBaseCategoryBinding

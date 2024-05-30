@@ -61,21 +61,21 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
-    implementation("br.com.simplepass:loading-button-android:2.2.0")
-    implementation("com.github.bumptech.glide:glide:4.13.0")
-    implementation("de.hdodenhof:circleimageview:3.1.0")
-    implementation("io.github.vejei.viewpagerindicator:viewpagerindicator:1.0.0-alpha.1")
-    implementation("com.shuhart.stepview:stepview:1.5.1")
+    implementation(libs.loading.button.android)
+    implementation(libs.glide)
+    implementation(libs.circleimageview)
+    implementation(libs.viewpagerindicator)
+    implementation(libs.stepview)
 
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation(libs.androidx.navigation.fragment.ktx)
 
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation(libs.hilt.android.v2511)
+    kapt(libs.hilt.android.compiler.v2511)
     implementation(libs.firebase.auth)
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
+    implementation(libs.kotlinx.coroutines.play.services)
 
     // Apply the Kotlin KAPT plugin
     apply(plugin = "kotlin-kapt")

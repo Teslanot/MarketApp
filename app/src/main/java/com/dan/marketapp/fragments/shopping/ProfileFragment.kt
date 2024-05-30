@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide
 import com.dan.marketapp.R
 import com.dan.marketapp.activities.LogRegActivity
 import com.dan.marketapp.databinding.FragmentProfileBinding
-import com.dan.marketapp.di.showBottomNavigation
+import com.dan.marketapp.util.showBottomNavigation
 import com.dan.marketapp.util.Resource
 import com.dan.marketapp.viewmodel.ProfileViewModel
 import com.google.firebase.auth.FirebaseAuth

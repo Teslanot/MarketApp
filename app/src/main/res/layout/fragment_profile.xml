@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".fragments.shopping.ProfileFragment"
     android:background="#F4F4F4">
 
 
@@ -32,24 +31,23 @@
 
             <TextView
                 android:id="@+id/tvSettings"
-                style="@style/BigTextViewThin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Settings"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintStart_toStartOf="@id/guidelineProfileLeft"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintProfile"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guidelineProfileLeft"
+                app:layout_constraintEnd_toEndOf="@id/guidelineProfileRight"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/tvSettings">
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/imageUser"
                     android:layout_width="43dp"
                     android:layout_height="43dp"
@@ -60,7 +58,6 @@
 
                 <TextView
                     android:id="@+id/tvUserName"
-                    style="@style/MediumTextViewThin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -73,7 +70,6 @@
 
                 <TextView
                     android:id="@+id/tv_edit_personal_details"
-                    style="@style/SmallTextViewThin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="edit personal details"
@@ -96,14 +92,13 @@
 
             <TextView
                 android:id="@+id/tvOrders"
-                style="@style/MediumTextViewThin"
                 android:textColor="@color/g_gray700"
                 android:textStyle="normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Orders"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintStart_toStartOf="@id/guidelineProfileLeft"
                 app:layout_constraintTop_toBottomOf="@id/constraintProfile" />
 
 
@@ -111,8 +106,8 @@
                 android:id="@+id/linearOrders"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guidelineProfileLeft"
+                app:layout_constraintEnd_toEndOf="@id/guidelineProfileRight"
                 app:layout_constraintTop_toBottomOf="@id/tvOrders"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp"
@@ -134,7 +129,6 @@
 
                     <TextView
                         android:id="@+id/tvAllOrders"
-                        style="@style/MediumTextViewThin"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -171,7 +165,6 @@
 
                     <TextView
                         android:id="@+id/tvTrackOrders"
-                        style="@style/MediumTextViewThin"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -207,7 +200,6 @@
 
                     <TextView
                         android:id="@+id/tvBilling"
-                        style="@style/MediumTextViewThin"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -230,22 +222,21 @@
 
             <TextView
                 android:id="@+id/tvNotifications"
-                style="@style/MediumTextViewThin"
                 android:textColor="@color/g_gray700"
                 android:textStyle="normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="Notifications"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintStart_toStartOf="@id/guidelineProfileLeft"
                 app:layout_constraintTop_toBottomOf="@id/linearOrders" />
 
             <LinearLayout
                 android:id="@+id/linearNotifications"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guidelineProfileLeft"
+                app:layout_constraintEnd_toEndOf="@id/guidelineProfileRight"
                 app:layout_constraintTop_toBottomOf="@id/tvNotifications"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp"
@@ -266,7 +257,6 @@
                         android:backgroundTint="#4cd964"/>
 
                     <TextView
-                        style="@style/MediumTextViewThin"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -292,14 +282,13 @@
 
             <TextView
                 android:id="@+id/tvRegional"
-                style="@style/MediumTextViewThin"
                 android:textColor="@color/g_gray700"
                 android:textStyle="normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Regional"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintStart_toStartOf="@id/guidelineProfileLeft"
                 app:layout_constraintTop_toBottomOf="@id/linearNotifications" />
 
             <LinearLayout
@@ -307,8 +296,8 @@
                 android:id="@+id/linear_regional"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guidelineProfileLeft"
+                app:layout_constraintEnd_toEndOf="@id/guidelineProfileRight"
                 app:layout_constraintTop_toBottomOf="@id/tvRegional"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp">
@@ -333,7 +322,6 @@
 
                     <TextView
                         android:id="@+id/logout"
-                        style="@style/MediumTextViewThin"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -360,26 +348,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/carter_one"
                 android:text="Version 1.0"
                 android:textColor="@color/g_gray700"
                 android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintEnd_toEndOf="@id/guidelineProfileRight"
+                app:layout_constraintStart_toStartOf="@id/guidelineProfileLeft"
                 app:layout_constraintTop_toBottomOf="@+id/linear_regional" />
 
 
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline1"
+                android:id="@+id/guidelineProfileLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.04" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline2"
+                android:id="@+id/guidelineProfileRight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

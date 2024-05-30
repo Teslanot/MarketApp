@@ -53,16 +53,11 @@ class CartViewModel @Inject constructor(
 
     }
 
-
-
-
     private fun calculatePrice(data: List<CartProduct>): Float {
-        return data.sumByDouble { cartProduct ->
+        return data.sumOf { cartProduct ->
             (cartProduct.product.offerPercentage.getProductPrice(cartProduct.product.price) * cartProduct.quantity).toDouble()
         }.toFloat()
     }
-
-
 
     init {
         getCartProducts()
@@ -92,8 +87,7 @@ class CartViewModel @Inject constructor(
 
         val index = cartProducts.value.data?.indexOf(cartProduct)
 
-
-        // Индексь может быть равен -1 если  рзульат функции getCartProducts не записался в  _cartProducts и это вызовет сбой приложения
+        // Индекс может быть равен -1 если  результат функции getCartProducts не записался в  _cartProducts и это вызовет сбой приложения
         if (index != null && index != -1) {
             val documentId = cartProductDocument[index].id
             when (quantityChanging) {
@@ -117,7 +111,7 @@ class CartViewModel @Inject constructor(
     }
 
     private fun decreaseQuantity(documentId: String) {
-        firebaseCommon.decreaseProductQuantity(documentId){result, exception ->
+        firebaseCommon.decreaseProductQuantity(documentId){ _, exception ->
             if(exception != null){
                 viewModelScope.launch {
                     _cartProducts.emit(Resource.Error(exception.message.toString()))
@@ -127,7 +121,7 @@ class CartViewModel @Inject constructor(
     }
 
     private fun increaseQuantity(documentId: String) {
-        firebaseCommon.increaseProductQuantity(documentId){result, exception ->
+        firebaseCommon.increaseProductQuantity(documentId){ _, exception ->
             if(exception != null){
                 viewModelScope.launch {
                     _cartProducts.emit(Resource.Error(exception.message.toString()))

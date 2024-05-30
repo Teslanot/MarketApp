@@ -17,7 +17,7 @@ import com.dan.marketapp.adapters.SizeAdapter
 import com.dan.marketapp.adapters.ViewPager2Images
 import com.dan.marketapp.data.CartProduct
 import com.dan.marketapp.databinding.FragmentProductDetailsBinding
-import com.dan.marketapp.di.hideBottomNavigation
+import com.dan.marketapp.util.hideBottomNavigation
 import com.dan.marketapp.util.Resource
 import com.dan.marketapp.viewmodel.DetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
