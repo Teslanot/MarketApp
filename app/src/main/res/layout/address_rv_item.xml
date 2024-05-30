@@ -9,6 +9,7 @@
         android:layout_height="40dp"
         android:background="@drawable/unselected_button_background"
         android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/carter_one"
         android:text="Home"
         android:textAllCaps="false"
