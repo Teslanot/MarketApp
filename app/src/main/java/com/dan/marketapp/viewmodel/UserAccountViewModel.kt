@@ -6,7 +6,6 @@ import android.net.Uri
 import android.provider.MediaStore
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.util.query
 import com.dan.marketapp.MarketApplication
 import com.dan.marketapp.data.User
 import com.dan.marketapp.util.RegisterValidation
@@ -32,10 +31,10 @@ class UserAccountViewModel @Inject constructor(
     app: Application
 ):AndroidViewModel(app) {
 
-    private val _user = MutableStateFlow<Resource<User>>(Resource.Unspecifed())
+    private val _user = MutableStateFlow<Resource<User>>(Resource.Unspecified())
     val user = _user.asStateFlow()
 
-    private val _updateInfo =  MutableStateFlow<Resource<User>>(Resource.Unspecifed())
+    private val _updateInfo =  MutableStateFlow<Resource<User>>(Resource.Unspecified())
     val updateInfo = _updateInfo.asStateFlow()
 
     init {

@@ -1,5 +1,6 @@
 package com.dan.marketapp.adapters
 
+import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
@@ -9,13 +10,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dan.marketapp.data.Product
-import com.dan.marketapp.databinding.BestDealsRvItemBinding
 import com.dan.marketapp.databinding.ProductRvItemBinding
 import com.dan.marketapp.helper.getProductPrice
 
 class BestProductAdapter: RecyclerView.Adapter<BestProductAdapter.BestProductViewHolder>() {
     inner class BestProductViewHolder(private val binding: ProductRvItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("DefaultLocale", "SetTextI18n")
         fun bind(product: Product){
             binding.apply {
                     val remainingPrice = product.offerPercentage.getProductPrice(product.price)

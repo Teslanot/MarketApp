@@ -18,7 +18,7 @@ class OrderViewModel @Inject constructor(
     private val auth: FirebaseAuth
 ):ViewModel() {
 
-    private val _order = MutableStateFlow<Resource<Order>>(Resource.Unspecifed())
+    private val _order = MutableStateFlow<Resource<Order>>(Resource.Unspecified())
     val order = _order.asStateFlow()
 
     fun placeOrder(order: Order) {

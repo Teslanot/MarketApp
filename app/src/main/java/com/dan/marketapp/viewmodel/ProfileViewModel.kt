@@ -18,7 +18,7 @@ class ProfileViewModel @Inject constructor(
     private val auth: FirebaseAuth
 ): ViewModel() {
 
-    private val _user = MutableStateFlow<Resource<User>>(Resource.Unspecifed())
+    private val _user = MutableStateFlow<Resource<User>>(Resource.Unspecified())
     val user = _user.asStateFlow()
 
     init {
@@ -44,7 +44,7 @@ class ProfileViewModel @Inject constructor(
                     }
                 }
 
-        }
+            }
     }
 
     fun logOut(){

@@ -20,7 +20,7 @@ class AddressViewModel @Inject constructor(
     private val auth: FirebaseAuth
 ) : ViewModel() {
 
-    private val _addNewAddress = MutableStateFlow<Resource<Address>>(Resource.Unspecifed())
+    private val _addNewAddress = MutableStateFlow<Resource<Address>>(Resource.Unspecified())
     val addNewAddress = _addNewAddress.asStateFlow()
 
     private val _error = MutableSharedFlow<String>()

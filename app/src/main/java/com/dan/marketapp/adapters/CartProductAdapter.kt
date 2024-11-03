@@ -1,5 +1,6 @@
 package com.dan.marketapp.adapters
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ class CartProductAdapter: RecyclerView.Adapter<CartProductAdapter.CartProductVie
     inner class CartProductViewHolder(val binding: CartProductItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("DefaultLocale", "SetTextI18n")
         fun bind(cartProduct: CartProduct) {
             binding.apply {
                 Glide.with(itemView).load(cartProduct.product.images[0]).into(imageCartProduct)

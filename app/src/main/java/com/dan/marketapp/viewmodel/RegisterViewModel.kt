@@ -9,7 +9,6 @@ import com.dan.marketapp.util.Resource
 import com.dan.marketapp.util.validateEmail
 import com.dan.marketapp.util.validatePassword
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -25,7 +24,7 @@ class RegisterViewModel @Inject constructor(
     private val db: FirebaseFirestore
 ): ViewModel(){
 
-    private val _register = MutableStateFlow<Resource<User>>(Resource.Unspecifed())
+    private val _register = MutableStateFlow<Resource<User>>(Resource.Unspecified())
     val register: Flow<Resource<User>> =  _register
 
     private val _validation = Channel<RegisterFieldState>()

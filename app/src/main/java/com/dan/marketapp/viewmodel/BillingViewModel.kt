@@ -18,7 +18,7 @@ class BillingViewModel @Inject constructor(
     private val auth: FirebaseAuth
 ): ViewModel() {
 
-    private val _address = MutableStateFlow<Resource<List<Address>>>(Resource.Unspecifed())
+    private val _address = MutableStateFlow<Resource<List<Address>>>(Resource.Unspecified())
     val address = _address.asStateFlow()
 
     init {

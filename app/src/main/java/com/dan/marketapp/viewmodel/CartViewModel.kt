@@ -25,7 +25,7 @@ class CartViewModel @Inject constructor(
     private val firebaseCommon: FirebaseCommon
 ) : ViewModel() {
 
-    private val _cartProducts = MutableStateFlow<Resource<List<CartProduct>>>(Resource.Unspecifed())
+    private val _cartProducts = MutableStateFlow<Resource<List<CartProduct>>>(Resource.Unspecified())
     val cartProducts = _cartProducts.asStateFlow()
 
 

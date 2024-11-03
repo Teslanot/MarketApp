@@ -1,5 +1,6 @@
 package com.dan.marketapp.adapters
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
@@ -17,6 +18,7 @@ class BillingProductsAdapter: Adapter<BillingProductsAdapter.BillingProductsView
 
     inner class BillingProductsViewHolder(val binding: BillingProductsRvItemBinding): ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n", "DefaultLocale")
         fun bind(billingProduct: CartProduct) {
             binding.apply {
                 Glide.with(itemView).load(billingProduct.product.images[0]).into(imageCartProduct)

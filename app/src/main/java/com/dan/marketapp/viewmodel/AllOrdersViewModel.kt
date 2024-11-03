@@ -17,7 +17,7 @@ class AllOrdersViewModel @Inject constructor(
     private val auth: FirebaseAuth
 ) : ViewModel() {
 
-    private val _allOrders = MutableStateFlow <Resource<List<Order>>>(Resource.Unspecifed())
+    private val _allOrders = MutableStateFlow <Resource<List<Order>>>(Resource.Unspecified())
     val allOrders = _allOrders.asStateFlow()
 
     init {

@@ -20,7 +20,7 @@ class DetailsViewModel @Inject constructor(
     private val firebaseCommon: FirebaseCommon
 ): ViewModel() {
 
-    private val _addToCart = MutableStateFlow<Resource<CartProduct>>(Resource.Unspecifed())
+    private val _addToCart = MutableStateFlow<Resource<CartProduct>>(Resource.Unspecified())
     val addToCart = _addToCart.asStateFlow()
 
     fun addUpdateProductCart(cartProduct: CartProduct) {
@@ -29,7 +29,7 @@ class DetailsViewModel @Inject constructor(
         }
         firestore.collection("user").document(auth.uid!!).collection("cart")
             .whereEqualTo("product.id", cartProduct.product.id).get()
-            .addOnSuccessListener {
+            .addOnSuccessListener { it ->
                 it.documents.let {
                     if (it.isEmpty()) { //Add new product
                         addNewProduct(cartProduct)
@@ -63,7 +63,7 @@ class DetailsViewModel @Inject constructor(
     }
 
     private fun increaseProductQuantity(documentId: String, cartProduct: CartProduct) {
-        firebaseCommon.increaseProductQuantity(documentId) { addedId, exception ->
+        firebaseCommon.increaseProductQuantity(documentId) { _, exception ->
             viewModelScope.launch {
                 if (exception == null)
                     _addToCart.emit(Resource.Success(cartProduct))

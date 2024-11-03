@@ -15,10 +15,10 @@ class CategoryViewModel constructor(
     private val category: Category
 ): ViewModel() {
 
-    private val _offerProducts = MutableStateFlow<Resource<List<Product>>>(Resource.Unspecifed())
+    private val _offerProducts = MutableStateFlow<Resource<List<Product>>>(Resource.Unspecified())
     val offerProducts = _offerProducts.asStateFlow()
 
-    private val _bestProducts = MutableStateFlow<Resource<List<Product>>>(Resource.Unspecifed())
+    private val _bestProducts = MutableStateFlow<Resource<List<Product>>>(Resource.Unspecified())
     val bestProducts = _bestProducts.asStateFlow()
 
     init {

@@ -1,5 +1,6 @@
 package com.dan.marketapp.adapters
 
+import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import com.dan.marketapp.databinding.BestDealsRvItemBinding
 class BestDealsAdapter: RecyclerView.Adapter<BestDealsAdapter.BestDealsViewHolder>() {
     inner class BestDealsViewHolder(private val binding: BestDealsRvItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n", "DefaultLocale")
         fun bind(product: Product){
             binding.apply {
                 Glide.with(itemView).load(product.images[0]).into(imgBestDeal)

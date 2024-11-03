@@ -22,7 +22,7 @@ class TableFragment:BaseCategoryFragment() {
     lateinit var firestore: FirebaseFirestore
 
     val viewModel by viewModels<CategoryViewModel>{
-        BaseCategoryViewModelFactory(firestore, Category.Furniture)
+        BaseCategoryViewModelFactory(firestore, Category.Table)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
